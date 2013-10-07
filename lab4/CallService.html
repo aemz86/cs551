@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Call Soap Web Service Demo</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="script" http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="script" http-equiv="Content-Style-Type" content="text/css" />
+	<script type="text/javascript" src="soapclient.js"></script>
+	<script type="text/javascript">
+	
+	var url = "http://vhost0221.dc1.on.ca.compute.ihost.com/aspnet_client/Soap4/WebService.asmx";
+
+	// QueryTable
+	function QueryTable()
+	{
+		var pl = new SOAPClientParameters();
+		pl.add("add1",document.frmDemo.query1.value);
+		pl.add("add2",document.frmDemo.query2.value);		
+		
+		SOAPClient.invoke(url, "queryTable", pl, true, QueryTable_callBack);
+	}
+	function QueryTable_callBack(r)
+	{
+		if (r)
+
+			alert(document.frmDemo.query1.value + " and " + document.frmDemo.query2.value + " have been added before");
+		else
+			alert(document.frmDemo.query1.value + " and " + document.frmDemo.query2.value + " haven't been added before!");
+	}
+	
+
+
+	// InsertTable
+	function add()
+	{
+		var pl = new SOAPClientParameters();
+		pl.add ("add1",document.frmDemo.add1.value);
+		pl.add ("add2",document.frmDemo.add2.value);
+
+
+		SOAPClient.invoke(url, "add", pl, true, add_callBack);
+	}
+	function add_callBack(r)
+	{
+		alert("The sum is " + r);
+	}
+
+	</script>
+</head>
+<body>
+    
+<div>
+	<h1><span id="ctl00_lblTitle">Soap Math</span></h1>
+    <form id="frmDemo" name="frmDemo" action="#" method="post">      
+	
+        <h2>Check if 2 numbers have been added already</h2>
+       
+	<label>First number: </label><input type="text" name="query1" id="query1" value="" />
+
+	<label>Second number: </label><input type="text" name="query2" id="query2" value="" />
+
+
+        <input type="button" value="Query" onclick="QueryTable();" />
+
+
+
+
+ 	<h2>Add 2 numbers</h2>
+       
+	<label>First number: </label><input type="text" name="add1" id="add1" value="" />
+
+	<label>Second number: </label><input type="text" name="add2" id="add2" value="" />
+
+        <input type="button" value="Insert" onclick="add();" />
+
+		
+		
+	
+    </form>
+</div>     
+    
+</body>
+</html>

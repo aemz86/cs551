@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Lab4</title>
+  <!--
+	<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css">
+	<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
+	<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>  
+	-->
+	<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+  
+  
+  
+
+
+<script type='text/javascript'>//<![CDATA[ 
+
+$('.query').live('click', function() {
+
+var add1 =document.getElementById("query1").value;
+var add2 =document.getElementById("query2").value;
+
+
+$.get("http://vhost0221.dc1.on.ca.compute.ihost.com/aspnet_client/Lab4/Service1.svc/queryInfo/"+add1+"/"+add2+"", 
+		function(queryInfo) {
+			if (queryInfo)
+				alert(add1 + " and " + add2 + " have been added before");
+			else
+				alert(add1 + " and " + add2 + " haven't been added before!");
+			
+
+		//alert(add1+" plus " + add2 + " = " + Add);
+		});	
+});
+
+
+$('.addition').live('click', function() {
+
+var add1 =document.getElementById("add1").value;
+var add2 =document.getElementById("add2").value;
+
+
+$.get("http://vhost0221.dc1.on.ca.compute.ihost.com/aspnet_client/Lab4/Service1.svc/Add/"+add1+"/"+add2+"", 
+		function(Add) {
+		alert(add1+" plus " + add2 + " = " + Add);
+		});	
+});
+
+$('.subtraction').live('click', function() {
+
+var minus1 =document.getElementById("minus1").value;
+var minus2 =document.getElementById("minus2").value;
+
+
+$.get("http://vhost0221.dc1.on.ca.compute.ihost.com/aspnet_client/Lab4/Service1.svc/Subtract/"+minus1+"/"+minus2+"", 
+		function(Subtract) {
+		alert(minus1+" plus " + minus2 + " = " + Subtract);
+		});	
+});
+
+$('.division').live('click', function() {
+
+var num1 =document.getElementById("num1").value;
+var num2 =document.getElementById("num2").value;
+
+
+$.get("http://vhost0221.dc1.on.ca.compute.ihost.com/aspnet_client/Lab4/Service1.svc/Divide/"+num1+"/"+num2+"", 
+		function(Divide) {
+		alert(num1+" divided by  " + num2 + " = " + Divide);
+		});	
+});
+
+$('.multiplication').live('click', function() {
+
+var minus1 =document.getElementById("minus1").value;
+var minus2 =document.getElementById("minus2").value;
+
+
+$.get("http://vhost0221.dc1.on.ca.compute.ihost.com/aspnet_client/Lab4/Service1.svc/Multiply/"+times1+"/"+times2+"", 
+		function(Multiply) {
+		alert(times1+" multiplied by " + times2 + " = " + Multiply);
+		});	
+});
+
+
+
+
+//]]>  
+
+</script>
+
+
+</head>
+<body>
+<h2>Addition</h2>
+<form>
+	<div>
+		  <p>
+			<label >Enter your first number</label>
+			<input type="text" name="textinput" id="add1" value=""  />
+		  </p>
+	</div>
+	<div>
+		  <p>
+			<label >Enter your next number</label>
+			<input type="text" name="textinput" id="add2" value=""  />
+		  </p>
+	</div>	
+	<input type="button" class="addition" value="New User"></input>
+</form>
+<br/>
+<br/>
+<hr/>
+<h3>Check if your desired two numbers to add have been entered already</h3>
+<form>
+	<div>
+		  <p>
+			<label >Enter your first number</label>
+			<input type="text" name="textinput" id="query1" value=""  />
+		  </p>
+	</div>
+	<div>
+		  <p>
+			<label >Enter your next number</label>
+			<input type="text" name="textinput" id="query2" value=""  />
+		  </p>
+	</div>	
+	<input type="button" class="query" value="New User"></input>
+</form>
+<br/>
+<br/>
+<hr/>
+
+
+
+<h2>Subtraction</h2>
+<form>
+	<div>
+		  <p>
+			<label >Enter your first number</label>
+			<input type="text" name="textinput" id="minus1" value=""  />
+		  </p>
+	</div>
+	<div>
+		  <p>
+			<label >Enter your next number</label>
+			<input type="text" name="textinput" id="minus2" value=""  />
+		  </p>
+	</div>	
+	<input type="button" class="subtraction" value="New User"></input>
+</form>
+<br/>
+<br/>
+<hr/>
+<h2>Division</h2>
+<form>
+	<div>
+		  <p>
+			<label >Enter your first number</label>
+			<input type="text" name="textinput" id="num1" value=""  />
+		  </p>
+	</div>
+	<div>
+		  <p>
+			<label >Enter your next number</label>
+			<input type="text" name="textinput" id="num2" value=""  />
+		  </p>
+	</div>	
+	<input type="button" class="division" value="New User"></input>
+</form><br/>
+<br/>
+<hr/>
+<h2>Multiplication</h2>
+<form>
+	<div>
+		  <p>
+			<label >Enter your first number</label>
+			<input type="text" name="textinput" id="times1" value=""  />
+		  </p>
+	</div>
+	<div>
+		  <p>
+			<label >Enter your next number</label>
+			<input type="text" name="textinput" id="times2" value=""  />
+		  </p>
+	</div>	
+	<input type="button" class="multiplication" value="New User"></input>
+</form>
+
+
+<!--
+<div data-role="page" id="page1">
+  <div data-role="header">
+    <h1>GimmePaw</h1>
+  </div>
+  <div data-role="content">
+    <div data-role="fieldcontain">
+      <p>
+        <label for="textinput">Username</label>
+        <input type="text" name="textinput" id="textinput" value=""  />
+      </p>
+      <div data-role="fieldcontain">
+        <p>
+          <label for="passwordinput">Password</label>
+          <input type="password" name="passwordinput" id="passwordinput" value=""  />
+        </p>
+        <div data-role="fieldcontain">
+          <label for="passwordinput2">Re-type Password </label>
+          <input type="password" name="passwordinput2" id="passwordinput2" value=""  />
+        </div>
+        <div data-role="fieldcontain">
+          <p>Email
+            <input type="text" name="textinput2" id="textinput2" value=""  />
+          </p>
+          <p>&nbsp;
+            <input type="button" class = "list" value="Register" />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-role="footer">
+    <h4>Footer  </h4>
+  </div>
+</div>
+-->
+<!--<input type="button" class="list" value="Register"></input>-->
+
+  
+</body>
+
+
+</html>
+
