@@ -1,0 +1,10 @@
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4-test\Lab4-test\bin\Lab4-test.dll
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4-test\Lab4-test\bin\Lab4-test.pdb
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4-test\Lab4-test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4-test\Lab4-test\obj\Debug\Lab4-test.dll
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4-test\Lab4-test\obj\Debug\Lab4-test.pdb
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4\Lab4-test\bin\Lab4-test.dll
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4\Lab4-test\bin\Lab4-test.pdb
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4\Lab4-test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4\Lab4-test\obj\Debug\Lab4-test.dll
+C:\Users\lex\Documents\Visual Studio 2010\Projects\CS551\Lab4\Lab4-test\obj\Debug\Lab4-test.pdb
