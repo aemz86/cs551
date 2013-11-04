@@ -1,0 +1,11 @@
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\WcfService2.dll
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\WcfService2.pdb
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\zxing.dll
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\zxing.presentation.dll
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\zxing.pdb
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\zxing.xml
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\zxing.presentation.pdb
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\zxing.presentation.xml
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\obj\Debug\WcfService2.dll
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\obj\Debug\WcfService2.pdb
+C:\inetpub\wwwroot\aspnet_client\WcfService2\WcfService2\bin\Microsoft.AspNet.Membership.OpenAuth.dll

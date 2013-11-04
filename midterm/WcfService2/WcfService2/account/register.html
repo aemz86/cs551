@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>User Registration</title>
+  
+<!--
+	<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css">
+	<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css">
+-->	
+	<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+	<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>  
+	<!--<script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>-->
+	<!--<script type='text/javascript' src='http://code.jquery.com/jquery-1.6.4.js'></script>	-->
+
+<script type='text/javascript'> 
+$(window).load(function(){
+
+$(document).ready(function() {
+  $("#pass2").keyup(validate);
+});
+
+
+function validate() {
+  var password1 = $("#pass").val(); 
+  var password2 = $("#pass2").val();
+
+    
+ 
+    if(password1 == password2) {
+       $("#validate-status").html("&#10004").css('color','#0C3');
+    }
+    else {
+       $("#validate-status").html("&#10006;").css('color','#F00');
+    }
+    
+}
+});
+$(document).ready(function () {
+
+    var test = document.getElementById("#submit");
+    var redirect = "";
+    var valid = false;
+    var emailValid = false;
+    var passwordValid = false;
+
+
+
+    $('#submit').live('click', function () {
+
+
+        //***Checking that passwords equal each other ***//
+        var passInput1 = $('#pass').val();
+        var passInput2 = $('#pass2').val();
+
+        if (passInput1 == passInput2 && (passInput1.length > 0 && passInput2.length > 0)) {
+            passwordValid = true;
+
+        }
+
+        else {
+            passwordValid = false;
+            //alert("Passwords do not match up");
+            //alert(passInput1);
+            //alert(passInput2);
+        }
+
+        if (passwordValid)
+            valid = true;
+
+        if (valid) {
+         //   alert(user.val());
+		 
+            myUser = {
+                username: user.val(),
+                password: pass.val(),
+				userType: "creator"
+				
+            };
+            //alert(JSON.stringify({ user: myUser }));
+        }
+
+    });
+
+    var user = $("#user");
+	var pass = $("#pass");
+	var type = $("#userType");	
+
+	
+	var myUser = {
+	    username: user.val(),
+		password: pass.val(), 
+		userType: type.val()
+	};
+
+
+
+	    $('#submit').live('click', function () {
+	        if (valid) {
+	            $.ajax({
+	                type: 'POST',
+	                url: '/aspnet_client/WcfService2/WcfService2/Service1.svc/insert',
+                    data: JSON.stringify({ user: myUser }),
+	                contentType: "application/json; charset=utf-8",
+	                dataType: 'json',
+                    //On success, redirect to home
+	                success: function (data) {
+
+	                    $('#results').html("Your Username: "+data.NewUser.username+" <br/> User type: "+data.NewUser.userType);
+	                    location.href = "main.aspx";
+
+	                },
+	                error: function (jqXHR, textStatus, errorThrown) {
+	                    alert(window.location.pathname);
+	                    alert(textStatus + "      " + errorThrown);
+	                }
+    	        });
+	        }
+	    });
+
+
+});
+
+</script>
+
+
+</head>
+<body>
+<div data-role="page" id="page1">
+  <div data-role="header">
+    <h1>Registration</h1>
+  </div>
+  <div data-role="content">
+    <div data-role="fieldcontain">
+      <p>
+        <label for="textinput">Username</label>
+        <input type="text" name="textinput" id="user" value=""/>
+      </p>
+      
+      <div data-role="fieldcontain">
+        <p>
+          <label for="passwordinput">Password</label>
+          <input type="password" name="password" id="pass" value=""  />
+        </p>
+        <span>
+          <label for="passwordinput2">Re-type Password </label>
+          <input type="password" name="password2" id="pass2" value=""  />
+		  
+        </span>
+		<span id="validate-status" ></span>
+        <div data-role="fieldcontain">
+        
+          <p>
+           <label for="textinput2">usertype (enter creator)</label>
+            <input type="text" name="textinput2" id="userType" value=""  />
+          </p>
+          <p>
+            <input type="button" class = "list" id ="submit" value="Register" />
+          </p>
+<p id="results"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    -->
+</body>
+
+
+</html>
+
